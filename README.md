@@ -10,7 +10,7 @@ Right now, the project is in beta, it probably won't work for a while, but I pla
 
 **POC 1v1**
 - [ ] Create a 1v1 Proof of Concept with an Attacker, Defender, DMZ system, and Database
-- [ ] Run the Attacker and Defender machines with VNC or something similar so that anyone can play from browser
+- [X] Run the Attacker and Defender machines with VNC or something similar so that anyone can play from browser
 - [ ] Create a Zero-Skill mode and a Live fire mode.
   - [ ] Zero skill will play like a choose-your-own-adventure
   - [ ] Live fire requires actual tools and exploits
