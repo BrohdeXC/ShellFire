@@ -1,0 +1,5 @@
+FROM red_test
+
+# Install VNC + noVNC + tools
+RUN apt update && apt install -y \
+    wireshark vim
