@@ -9,9 +9,11 @@ Right now, the project is in beta, it probably won't work for a while, but I pla
 ## How to Use ##
 1. Download the Repo  
 2. Run the dockerfile  
+  `docker compose up --build`  
 3. Once built, connect to a player machine on localhost ports    
   Red Team: 8101 - 8107  
   Blue Team: 8001 - 8007  
+  Password for all vnc sessions is "kali"  
 
 ## Goals for the Project ##
 
