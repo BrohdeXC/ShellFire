@@ -6,6 +6,13 @@ A docker-powered Red/Blue simulation exercise
 I've made this program mostly as a test to myself. I wanted to deep dive into Docker with a project. The goal is to create a Red Team vs Blue Team simulation battleground that could be spun up and torn down really quickly. I have no prior experience with Docker, so we're going to see where this goes.  
 Right now, the project is in beta, it probably won't work for a while, but I plan to finish the Zero-Skill 7v7 mode before Q2 of 2026.
 
+## How to Use ##
+1. Download the Repo  
+2. Run the dockerfile  
+3. Once built, connect to a player machine on localhost ports    
+  Red Team: 8101 - 8107  
+  Blue Team: 8001 - 8007  
+
 ## Goals for the Project ##
 
 **POC 1v1**
