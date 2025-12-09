@@ -1,0 +1,132 @@
+# --------------------------------
+# ----- BUILD CONFIG ANCHORS -----
+# --------------------------------
+x-red-build: &red_build
+  context: ./RedTeam
+  dockerfile: Dockerfile
+
+x-blue-build: &blue_build
+  context: ./BlueTeam
+  dockerfile: Dockerfile
+
+# --------------------------------
+# -------- SERVICES --------------
+# --------------------------------
+services:
+  # ------------------------------
+  # -------- RED TEAM ------------
+  # ------------------------------
+  red_teamlead:
+    build:
+      <<: *red_build
+      target: teamlead
+    ports:
+      - "8101:8080"
+      - "6101:5900"
+
+  red_osint:
+    build:
+      <<: *red_build
+      target: reconspecialist
+    ports:
+      - "8102:8080"
+      - "6102:5900"
+
+  red_scanning:
+    build:
+      <<: *red_build
+      target: scanningandrecon
+    ports:
+      - "8103:8080"
+      - "6103:5900"
+
+  red_exploitation:
+    build:
+      <<: *red_build
+      target: exploitation
+    ports:
+      - "8104:8080"
+      - "6104:5900"
+
+  red_moveandescalate:
+    build:
+      <<: *red_build
+      target: movement
+    ports:
+      - "8105:8080"
+      - "6105:5900"
+
+  red_persistence:
+    build:
+      <<: *red_build
+      target: persistence
+    ports:
+      - "8106:8080"
+      - "6106:5900"
+
+  red_credsandexfil:
+    build:
+      <<: *red_build
+      target: credsandexfil
+    ports:
+      - "8107:8080"
+      - "6107:5900"
+
+  # ------------------------------
+  # -------- BLUE TEAM ----------
+  # ------------------------------
+  blue_teamlead:
+    build:
+      <<: *blue_build
+      target: teamlead
+    ports:
+      - "8001:8080"
+      - "6001:5900"
+
+  blue_socanalyst:
+    build:
+      <<: *blue_build
+      target: socanalyst
+    ports:
+      - "8002:8080"
+      - "6002:5900"
+
+  blue_threathunter:
+    build:
+      <<: *blue_build
+      target: threathunter
+    ports:
+      - "8003:8080"
+      - "6003:5900"
+
+  blue_forensicsanalyst:
+    build:
+      <<: *blue_build
+      target: forensicsanalyst
+    ports:
+      - "8004:8080"
+      - "6004:5900"
+
+  blue_networkengineer:
+    build:
+      <<: *blue_build
+      target: networkengineer
+    ports:
+      - "8005:8080"
+      - "6005:5900"
+
+  blue_iamspecialist:
+    build:
+      <<: *blue_build
+      target: iamspecialist
+    ports:
+      - "8006:8080"
+      - "6006:5900"
+
+  blue_dlpmonitoring:
+    build:
+      <<: *blue_build
+      target: dlpmonitoring
+    ports:
+      - "8007:8080"
+      - "6007:5900"
